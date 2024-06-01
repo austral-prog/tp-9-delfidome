@@ -39,13 +39,10 @@ def remove_item(inventory, item):
     return inventory
 
 def list_inventory(inventory):
-    nueva_lista = list() # nueva_lista = []
-    for item in inventory.items():
-        # item = ("coal", 7)
-        elemento, cantidad = item
-        # elemento : str
-        # cantidaf : int
-        if cantidad > 0: # cant mayor a 0
-            nueva_lista.append(item) # [("fh", 3)]
+   inventory_list = list()
 
-    return nueva_lista
+    for key in inventory:
+        if not inventory[key]: continue
+        inventory_list.append((key, inventory[key]))
+
+    return inventory_list
